@@ -4,7 +4,7 @@ import 'models.dart';
 
 class DatabaseService {
   final Firestore _db = Firestore.instance;
-  Stream<App> streamApp(String id) {
+  Stream<App> streamApp(id) {
     return _db
         .collection('appList')
         .document(id)

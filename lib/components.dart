@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'db.dart';
+import 'models.dart';
 
 class TextFieldDesign extends StatelessWidget {
   //TEXTBOX TASARIMI.
@@ -267,7 +269,7 @@ class AppColoredButton extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
-                child: Image.asset(image),
+                child: Image.network(image),
                 height: 60.0,
                 width: 60.0,
               )),

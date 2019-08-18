@@ -50,17 +50,11 @@ class AppScreen extends StatelessWidget {
   var data = App;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-Text(""),
-
-]);
-
-
-
-         }
+    return Column(children: <Widget>[
+      Text(""),
+    ]);
+  }
 }
-
 
 class AppList extends StatelessWidget {
   @override
@@ -113,24 +107,12 @@ class AppList extends StatelessWidget {
   }
 }
 
-/*
-      child: ListView(
-        children: apps.map((app) {
-          return Container(
-            child: Text(app.appName),
-          );
-        }).toList(),
-      ),
-    );
-
-       */
-
 class MarketListPage extends StatefulWidget {
   @override
-  _MarketListPageState createState() => _MarketListPageState();
+  MarketListPageState createState() => MarketListPageState();
 }
 
-class _MarketListPageState extends State<MarketListPage> {
+class MarketListPageState extends State<MarketListPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -159,19 +141,103 @@ class _MarketListPageState extends State<MarketListPage> {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  StreamProvider<App>.value(
+                  StreamBuilder<App>(
+                    stream: db.streamApp('Cy7kUgWgj9HNAUdxhFf3'),
+                    builder: (context, snapshot) {
+                      var app = snapshot.data;
 
-            ),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
-                  AppView(),
+                      if (app != null) {
+                        return Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                      color: Color(0xFFF7F7F7), width: 2.0),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 1,
+                                    child: AppColoredButton(
+                                      backColor: Colors.red,
+                                      image: app.appIcon,
+                                      onPress: () {},
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 4,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 20.0),
+                                          child: Column(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 34.0, bottom: 3.3),
+                                                child: Container(
+                                                  //Text nedenini bilmediğim bir şekilde sağa kaydı düzeltmek için container a alıp pading vermek zorunda kaldım
+                                                  child: Text("${app.appName}",
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: TextStyle(
+                                                        color:
+                                                            Color(0xFF595959),
+                                                        fontSize: 30.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily: 'MuseoSans',
+                                                      )),
+                                                ),
+                                              ),
+                                              Container(
+                                                child: Text(
+                                                    "${app.appDescription}}",
+                                                    textAlign: TextAlign.start,
+                                                    style: TextStyle(
+                                                      fontSize: 21.0,
+                                                      color: Color(0xFF9F9F9F),
+                                                      fontFamily: 'MuseoSans',
+                                                    )),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                      flex: 2,
+                                      child: Container(
+                                          margin: EdgeInsets.only(bottom: 30.0),
+                                          child: FlatButton(
+                                            onPressed: () {},
+                                            child: RaisedButtonDesign(
+                                              onPress: () {},
+                                              backColor: Color(0xFF00E2FF),
+                                              borderColor: Color(0xFF0FBDF9),
+                                              textSize: 45.0,
+                                              buttonText: 'İndir',
+                                            ),
+                                          ))),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        print(app);
+                        return Text("");
+                      }
+                    },
+                  ),
                 ]),
           ),
         ),

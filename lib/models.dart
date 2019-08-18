@@ -16,7 +16,7 @@ class App {
 
 
   factory App.fromMap(Map data) {
-    data = data ?? { };
+    data = data ?? {};
     return App(
         appDescription: data['appDescription'] ?? '',
         appIcon: data['appIcon'] ?? '',
