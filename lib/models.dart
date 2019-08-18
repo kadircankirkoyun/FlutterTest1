@@ -16,6 +16,8 @@ class App {
 
 
   factory App.fromMap(data) {
+    print(data);
+    print("kadircasdasdas");
     data = data ?? {};
     return App(
         appDescription: data['appDescription'] ?? '',

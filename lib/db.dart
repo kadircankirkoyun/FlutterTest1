@@ -23,7 +23,8 @@ class DatabaseService {
 
   Future<App> getApp(String id) async {
     var snap = await _db.collection('appList').document(id).get();
-
+    print(snap);
+    print("kadixxr");
     return App.fromMap(snap.data);
   }
 
