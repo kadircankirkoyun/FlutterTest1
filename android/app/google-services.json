@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "693904463096",
+    "firebase_url": "https://kidsappmarket.firebaseio.com",
+    "project_id": "kidsappmarket",
+    "storage_bucket": "kidsappmarket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693904463096:android:dd6434a878c598d3",
+        "android_client_info": {
+          "package_name": "com.testappp.kids_appmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693904463096-f0p9sujtd4clj9add1e3kpmkl64kj3jd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmQSzZCxsL2YJznFZZZS_w8lESSzWv_wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693904463096-f0p9sujtd4clj9add1e3kpmkl64kj3jd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
