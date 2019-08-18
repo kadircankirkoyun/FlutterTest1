@@ -234,7 +234,7 @@ class MarketListPageState extends State<MarketListPage> {
                         );
                       } else {
                         print(app);
-                        return Text("");
+                        return Text("HATA");
                       }
                     },
                   ),

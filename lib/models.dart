@@ -15,7 +15,7 @@ class App {
   App({ this.id, this.appDescription, this.appIcon, this.appName, this.downloadUrl, this.packageName, this.packageVersion, this.appKeywords });
 
 
-  factory App.fromMap(Map data) {
+  factory App.fromMap(data) {
     data = data ?? {};
     return App(
         appDescription: data['appDescription'] ?? '',
